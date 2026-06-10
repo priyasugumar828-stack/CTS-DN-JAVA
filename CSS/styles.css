@@ -1,0 +1,335 @@
+/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Universal Selector */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* Body Styling */
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:
+url("https://picsum.photos/1600/900")
+no-repeat center center fixed;
+
+background-size:cover;
+
+background-color:#f4f4f4;
+
+line-height:1.6;
+
+}
+
+/* Header Styles */
+
+#mainHeader{
+
+background:
+linear-gradient(135deg,#b3ccf0,#f9c8f8);
+
+color:white;
+
+padding:30px;
+
+text-align:center;
+
+}
+
+/* Navigation */
+
+nav{
+
+padding:15px;
+
+background:rgba(0,0,0,0.8);
+
+text-align:center;
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+padding:10px 15px;
+
+margin:5px;
+
+font-weight:bold;
+
+}
+
+nav a:hover{
+
+background:#f6e7ba;
+
+color:black;
+
+border-radius:5px;
+
+}
+
+nav a:visited{
+
+color:#ddd;
+
+}
+
+nav a:active{
+
+color:rgb(239, 177, 177);
+
+}
+
+/* Section Styling */
+
+section{
+
+background:rgba(255,255,255,0.95);
+
+margin:20px;
+
+padding:20px;
+
+border-radius:10px;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+
+}
+
+/* Event Card */
+
+.eventCard{
+
+border:3px solid #0d6efd;
+
+padding:20px;
+
+margin:20px;
+
+}
+
+/* Headings */
+
+h2{
+
+background:
+linear-gradient(to right,#bef8ee,#20c997);
+
+color:white;
+
+padding:10px;
+
+border-radius:5px;
+
+margin-bottom:15px;
+
+}
+
+h3,p{
+
+letter-spacing:1px;
+
+line-height:1.8;
+
+}
+
+/* Lists */
+
+ul,ol{
+
+padding-left:25px;
+
+}
+
+li{
+
+padding:5px;
+
+margin:5px;
+
+}
+
+/* Tables */
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+text-align:center;
+
+margin-top:15px;
+
+}
+
+th{
+
+background:#0d6efd;
+
+color:white;
+
+}
+
+th,td{
+
+border:1px solid #ccc;
+
+padding:10px;
+
+}
+
+tr:nth-child(even){
+
+background:#f2f2f2;
+
+}
+
+/* Gallery */
+
+.gallery-img{
+
+width:100%;
+
+max-width:250px;
+
+border:4px solid #0d6efd;
+
+border-radius:10px;
+
+}
+
+/* Form */
+
+input,
+textarea,
+select{
+
+width:100%;
+
+padding:10px;
+
+margin:10px 0;
+
+border:1px solid #ccc;
+
+border-radius:5px;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+outline:3px solid orange;
+
+}
+
+/* Submit Button */
+
+input[type="submit"]{
+
+background:#0d6efd;
+
+color:white;
+
+border:none;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+input[type="submit"]:hover{
+
+background:#084298;
+
+}
+
+/* Video */
+
+video{
+
+max-width:100%;
+
+border-radius:10px;
+
+}
+
+/* Multi Column */
+
+.newsSection{
+
+column-count:2;
+
+column-gap:30px;
+
+column-rule:1px solid gray;
+
+}
+
+/* Footer */
+
+footer{
+
+background:#212529;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+nav a{
+
+display:block;
+
+margin:10px 0;
+
+}
+
+h1{
+
+font-size:24px;
+
+}
+
+h2{
+
+font-size:20px;
+
+}
+
+img{
+
+width:100%;
+
+height:auto;
+
+}
+
+.newsSection{
+
+column-count:1;
+
+}
+
+}
