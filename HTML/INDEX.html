@@ -1,0 +1,558 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Local Community Event Portal</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f4f6f9;
+}
+
+header{
+background:#0d6efd;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#222;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:yellow;
+}
+
+#welcomeBanner{
+background:blue;
+color:white;
+padding:15px;
+text-align:center;
+margin:20px;
+border-radius:10px;
+}
+
+.highlight{
+background:yellow;
+padding:5px;
+font-weight:bold;
+}
+
+section{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px lightgray;
+}
+
+table{
+width:100%;
+text-align:center;
+}
+
+.event-img{
+width:200px;
+height:130px;
+border:3px solid black;
+border-radius:10px;
+cursor:pointer;
+}
+
+input,
+select,
+textarea{
+width:90%;
+padding:10px;
+margin:8px;
+}
+
+button{
+background:#0d6efd;
+color:white;
+border:none;
+padding:10px 20px;
+cursor:pointer;
+}
+
+button:hover{
+background:#084298;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<header>
+
+<h1>🏘 Local Community Event Portal</h1>
+
+<p>
+Helping Residents Discover Events and Services
+</p>
+
+</header>
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#events">Events</a>
+
+<a href="#register">Register</a>
+
+<a href="#contact">Contact</a>
+
+<a href="help.html" target="_blank">Help</a>
+
+</nav>
+
+<!-- Main -->
+
+<main>
+
+<section id="home">
+
+<div id="welcomeBanner">
+
+Welcome to the Community Event Portal
+
+</div>
+
+<p>
+
+Register Today and Get
+
+<span style="color:red;font-weight:bold;">
+
+20% OFF Registration
+
+</span>
+
+</p>
+
+<p class="highlight">
+
+Community Festival Registration Open Now!
+
+</p>
+
+</section>
+
+<section id="events">
+
+<h2>Community Event Gallery</h2>
+
+<table border="1">
+
+<tr>
+
+<td>
+
+<img
+src="https://picsum.photos/200/130?1"
+alt="Music Event"
+title="Music Event"
+class="event-img"
+ondblclick="enlargeImage(this)">
+
+<p>Music Festival</p>
+
+</td>
+
+<td>
+
+<img
+src="https://picsum.photos/200/130?2"
+alt="Sports Event"
+title="Sports Event"
+class="event-img"
+ondblclick="enlargeImage(this)">
+
+<p>Sports Day</p>
+
+</td>
+
+<td>
+
+<img
+src="https://picsum.photos/200/130?3"
+alt="Food Fair"
+title="Food Fair"
+class="event-img"
+ondblclick="enlargeImage(this)">
+
+<p>Food Fair</p>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<img
+src="https://picsum.photos/200/130?4"
+alt="Book Expo"
+title="Book Expo"
+class="event-img"
+ondblclick="enlargeImage(this)">
+
+<p>Book Exhibition</p>
+
+</td>
+
+<td>
+
+<img
+src="https://picsum.photos/200/130?5"
+alt="Art Show"
+title="Art Show"
+class="event-img"
+ondblclick="enlargeImage(this)">
+
+<p>Art Show</p>
+
+</td>
+
+<td>
+
+<img
+src="https://picsum.photos/200/130?6"
+alt="Tech Event"
+title="Tech Event"
+class="event-img"
+ondblclick="enlargeImage(this)">
+
+<p>Tech Meet</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section id="register">
+
+<h2>Event Registration Form</h2>
+
+<form>
+
+<input
+type="text"
+id="name"
+placeholder="Enter Your Name"
+required
+autofocus>
+
+<input
+type="email"
+placeholder="Enter Email"
+required>
+
+<input
+type="date"
+required>
+
+<select
+id="eventType"
+onchange="showFee()">
+
+<option value="">Select Event</option>
+
+<option value="Music">Music Event</option>
+
+<option value="Sports">Sports Event</option>
+
+<option value="Tech">Tech Event</option>
+
+</select>
+
+<p id="fee"></p>
+
+<input
+type="text"
+id="phone"
+placeholder="Enter Phone Number"
+onblur="validatePhone()">
+
+<textarea
+id="feedback"
+placeholder="Enter Feedback"
+onkeyup="countCharacters()">
+</textarea>
+
+<p>
+
+Characters Typed:
+<span id="count">0</span>
+
+</p>
+
+<button
+type="button"
+onclick="submitForm()">
+
+Register
+
+</button>
+
+<br><br>
+
+<output id="result"></output>
+
+</form>
+
+</section>
+
+<section>
+
+<h2>Event Promo Video</h2>
+
+<video
+width="500"
+controls
+oncanplay="videoReady()">
+
+<source
+src="https://www.w3schools.com/html/mov_bbb.mp4"
+type="video/mp4">
+
+</video>
+
+<p id="videoMessage"></p>
+
+</section>
+
+<section>
+
+<h2>Find Nearby Events</h2>
+
+<button onclick="findLocation()">
+
+Find Nearby Events
+
+</button>
+
+<p id="location"></p>
+
+</section>
+
+</main>
+
+<!-- Footer -->
+
+<footer id="contact">
+
+<h2>Contact Us</h2>
+
+<p>Email: communityportal@gmail.com</p>
+
+<p>Phone: +91 9876543210</p>
+
+<button onclick="clearPreferences()">
+
+Clear Preferences
+
+</button>
+
+</footer>
+
+<script>
+
+console.log("Community Event Portal Loaded");
+
+/* Phone Validation */
+
+function validatePhone(){
+
+let phone=
+document.getElementById("phone").value;
+
+if(phone.length!=10){
+
+alert("Please Enter Valid 10 Digit Phone Number");
+
+}
+
+}
+
+/* Event Fee */
+
+function showFee(){
+
+let event=
+document.getElementById("eventType").value;
+
+let feeText="";
+
+if(event=="Music"){
+feeText="Fee : ₹200";
+}
+else if(event=="Sports"){
+feeText="Fee : ₹150";
+}
+else if(event=="Tech"){
+feeText="Fee : ₹300";
+}
+
+document.getElementById("fee").innerHTML=feeText;
+
+localStorage.setItem("preferredEvent",event);
+
+}
+
+/* Character Counter */
+
+function countCharacters(){
+
+let text=
+document.getElementById("feedback").value;
+
+document.getElementById("count").innerHTML=
+text.length;
+
+}
+
+/* Registration */
+
+function submitForm(){
+
+document.getElementById("result").value=
+"Registration Submitted Successfully";
+
+sessionStorage.setItem("registered","yes");
+
+alert("Registration Successful");
+
+}
+
+/* Image Double Click */
+
+function enlargeImage(img){
+
+img.style.width="300px";
+img.style.height="200px";
+
+}
+
+/* Video Event */
+
+function videoReady(){
+
+document.getElementById("videoMessage").innerHTML=
+"🎬 Video Ready To Play";
+
+}
+
+/* Load Saved Event */
+
+window.onload=function(){
+
+let savedEvent=
+localStorage.getItem("preferredEvent");
+
+if(savedEvent){
+
+document.getElementById("eventType").value=
+savedEvent;
+
+showFee();
+
+}
+
+}
+
+/* Clear Storage */
+
+function clearPreferences(){
+
+localStorage.clear();
+
+sessionStorage.clear();
+
+alert("Preferences Cleared");
+
+}
+
+/* Geolocation */
+
+function findLocation(){
+
+if(navigator.geolocation){
+
+navigator.geolocation.getCurrentPosition(
+
+function(position){
+
+document.getElementById("location").innerHTML=
+
+"Latitude : "
++ position.coords.latitude +
+
+"<br>Longitude : "
++ position.coords.longitude;
+
+},
+
+function(error){
+
+alert("Location Access Denied");
+
+},
+
+{
+enableHighAccuracy:true,
+timeout:5000
+}
+
+);
+
+}
+
+}
+
+/* Before Unload */
+
+window.onbeforeunload=function(){
+
+return "You may lose unsaved information.";
+
+}
+
+</script>
+
+</body>
+</html>
+```
